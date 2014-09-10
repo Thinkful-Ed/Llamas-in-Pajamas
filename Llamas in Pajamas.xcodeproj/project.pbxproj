@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D39B89A19971341003CFECA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39B89919971341003CFECA /* AppDelegate.swift */; };
+		1D39B89C19971341003CFECA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1D39B89B19971341003CFECA /* GameScene.sks */; };
+		1D39B89E19971341003CFECA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39B89D19971341003CFECA /* GameScene.swift */; };
+		1D39B8A019971341003CFECA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39B89F19971341003CFECA /* GameViewController.swift */; };
+		1D39B8A319971341003CFECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D39B8A119971341003CFECA /* Main.storyboard */; };
+		1D39B8A519971341003CFECA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D39B8A419971341003CFECA /* Images.xcassets */; };
+		1D39B8B119971341003CFECA /* Llamas_in_PajamasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39B8B019971341003CFECA /* Llamas_in_PajamasTests.swift */; };
+		1D39B8BB19971458003CFECA /* GameCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39B8BA19971458003CFECA /* GameCharacter.swift */; };
+		1D39B8BD19971504003CFECA /* Llama.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39B8BC19971504003CFECA /* Llama.swift */; };
+		1D39B8BF199715BB003CFECA /* Lion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39B8BE199715BB003CFECA /* Lion.swift */; };
+		1D39B8C1199715C7003CFECA /* Pajama.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D39B8C0199715C7003CFECA /* Pajama.swift */; };
+		1D39B8C619971643003CFECA /* lion.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1D39B8C219971643003CFECA /* lion.atlas */; };
+		1D39B8C719971643003CFECA /* llama-idle.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1D39B8C319971643003CFECA /* llama-idle.atlas */; };
+		1D39B8C819971643003CFECA /* llama-walk.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1D39B8C419971643003CFECA /* llama-walk.atlas */; };
+		1D39B8C919971643003CFECA /* pajama.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1D39B8C519971643003CFECA /* pajama.atlas */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D39B8AB19971341003CFECA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D39B88C19971341003CFECA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D39B89319971341003CFECA;
+			remoteInfo = "Llamas in Pajamas";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D39B89419971341003CFECA /* Llamas in Pajamas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Llamas in Pajamas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D39B89819971341003CFECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D39B89919971341003CFECA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D39B89B19971341003CFECA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		1D39B89D19971341003CFECA /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		1D39B89F19971341003CFECA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		1D39B8A219971341003CFECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1D39B8A419971341003CFECA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1D39B8AA19971341003CFECA /* Llamas in PajamasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Llamas in PajamasTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D39B8AF19971341003CFECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D39B8B019971341003CFECA /* Llamas_in_PajamasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Llamas_in_PajamasTests.swift; sourceTree = "<group>"; };
+		1D39B8BA19971458003CFECA /* GameCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCharacter.swift; sourceTree = "<group>"; };
+		1D39B8BC19971504003CFECA /* Llama.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Llama.swift; sourceTree = "<group>"; };
+		1D39B8BE199715BB003CFECA /* Lion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lion.swift; sourceTree = "<group>"; };
+		1D39B8C0199715C7003CFECA /* Pajama.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pajama.swift; sourceTree = "<group>"; };
+		1D39B8C219971643003CFECA /* lion.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = lion.atlas; sourceTree = "<group>"; };
+		1D39B8C319971643003CFECA /* llama-idle.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "llama-idle.atlas"; sourceTree = "<group>"; };
+		1D39B8C419971643003CFECA /* llama-walk.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "llama-walk.atlas"; sourceTree = "<group>"; };
+		1D39B8C519971643003CFECA /* pajama.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = pajama.atlas; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D39B89119971341003CFECA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D39B8A719971341003CFECA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D39B88B19971341003CFECA = {
+			isa = PBXGroup;
+			children = (
+				1D39B89619971341003CFECA /* Llamas in Pajamas */,
+				1D39B8AD19971341003CFECA /* Llamas in PajamasTests */,
+				1D39B89519971341003CFECA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D39B89519971341003CFECA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D39B89419971341003CFECA /* Llamas in Pajamas.app */,
+				1D39B8AA19971341003CFECA /* Llamas in PajamasTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D39B89619971341003CFECA /* Llamas in Pajamas */ = {
+			isa = PBXGroup;
+			children = (
+				1D39B89919971341003CFECA /* AppDelegate.swift */,
+				1D39B89B19971341003CFECA /* GameScene.sks */,
+				1D39B89D19971341003CFECA /* GameScene.swift */,
+				1D39B89F19971341003CFECA /* GameViewController.swift */,
+				1D39B8BA19971458003CFECA /* GameCharacter.swift */,
+				1D39B8BC19971504003CFECA /* Llama.swift */,
+				1D39B8BE199715BB003CFECA /* Lion.swift */,
+				1D39B8C0199715C7003CFECA /* Pajama.swift */,
+				1D39B8A119971341003CFECA /* Main.storyboard */,
+				1D39B8A419971341003CFECA /* Images.xcassets */,
+				1D39B8C319971643003CFECA /* llama-idle.atlas */,
+				1D39B8C419971643003CFECA /* llama-walk.atlas */,
+				1D39B8C219971643003CFECA /* lion.atlas */,
+				1D39B8C519971643003CFECA /* pajama.atlas */,
+				1D39B89719971341003CFECA /* Supporting Files */,
+			);
+			path = "Llamas in Pajamas";
+			sourceTree = "<group>";
+		};
+		1D39B89719971341003CFECA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D39B89819971341003CFECA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D39B8AD19971341003CFECA /* Llamas in PajamasTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D39B8B019971341003CFECA /* Llamas_in_PajamasTests.swift */,
+				1D39B8AE19971341003CFECA /* Supporting Files */,
+			);
+			path = "Llamas in PajamasTests";
+			sourceTree = "<group>";
+		};
+		1D39B8AE19971341003CFECA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D39B8AF19971341003CFECA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D39B89319971341003CFECA /* Llamas in Pajamas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D39B8B419971341003CFECA /* Build configuration list for PBXNativeTarget "Llamas in Pajamas" */;
+			buildPhases = (
+				1D39B89019971341003CFECA /* Sources */,
+				1D39B89119971341003CFECA /* Frameworks */,
+				1D39B89219971341003CFECA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Llamas in Pajamas";
+			productName = "Llamas in Pajamas";
+			productReference = 1D39B89419971341003CFECA /* Llamas in Pajamas.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1D39B8A919971341003CFECA /* Llamas in PajamasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D39B8B719971341003CFECA /* Build configuration list for PBXNativeTarget "Llamas in PajamasTests" */;
+			buildPhases = (
+				1D39B8A619971341003CFECA /* Sources */,
+				1D39B8A719971341003CFECA /* Frameworks */,
+				1D39B8A819971341003CFECA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D39B8AC19971341003CFECA /* PBXTargetDependency */,
+			);
+			name = "Llamas in PajamasTests";
+			productName = "Llamas in PajamasTests";
+			productReference = 1D39B8AA19971341003CFECA /* Llamas in PajamasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D39B88C19971341003CFECA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Thinkful;
+				TargetAttributes = {
+					1D39B89319971341003CFECA = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					1D39B8A919971341003CFECA = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 1D39B89319971341003CFECA;
+					};
+				};
+			};
+			buildConfigurationList = 1D39B88F19971341003CFECA /* Build configuration list for PBXProject "Llamas in Pajamas" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1D39B88B19971341003CFECA;
+			productRefGroup = 1D39B89519971341003CFECA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D39B89319971341003CFECA /* Llamas in Pajamas */,
+				1D39B8A919971341003CFECA /* Llamas in PajamasTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D39B89219971341003CFECA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D39B8C819971643003CFECA /* llama-walk.atlas in Resources */,
+				1D39B8A519971341003CFECA /* Images.xcassets in Resources */,
+				1D39B89C19971341003CFECA /* GameScene.sks in Resources */,
+				1D39B8C919971643003CFECA /* pajama.atlas in Resources */,
+				1D39B8A319971341003CFECA /* Main.storyboard in Resources */,
+				1D39B8C619971643003CFECA /* lion.atlas in Resources */,
+				1D39B8C719971643003CFECA /* llama-idle.atlas in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D39B8A819971341003CFECA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D39B89019971341003CFECA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D39B89E19971341003CFECA /* GameScene.swift in Sources */,
+				1D39B8C1199715C7003CFECA /* Pajama.swift in Sources */,
+				1D39B8BB19971458003CFECA /* GameCharacter.swift in Sources */,
+				1D39B8A019971341003CFECA /* GameViewController.swift in Sources */,
+				1D39B8BF199715BB003CFECA /* Lion.swift in Sources */,
+				1D39B89A19971341003CFECA /* AppDelegate.swift in Sources */,
+				1D39B8BD19971504003CFECA /* Llama.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D39B8A619971341003CFECA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D39B8B119971341003CFECA /* Llamas_in_PajamasTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D39B8AC19971341003CFECA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D39B89319971341003CFECA /* Llamas in Pajamas */;
+			targetProxy = 1D39B8AB19971341003CFECA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1D39B8A119971341003CFECA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D39B8A219971341003CFECA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D39B8B219971341003CFECA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1D39B8B319971341003CFECA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D39B8B519971341003CFECA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Llamas in Pajamas/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1D39B8B619971341003CFECA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Llamas in Pajamas/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1D39B8B819971341003CFECA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Llamas in PajamasTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Llamas in Pajamas.app/Llamas in Pajamas";
+			};
+			name = Debug;
+		};
+		1D39B8B919971341003CFECA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Llamas in PajamasTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Llamas in Pajamas.app/Llamas in Pajamas";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D39B88F19971341003CFECA /* Build configuration list for PBXProject "Llamas in Pajamas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D39B8B219971341003CFECA /* Debug */,
+				1D39B8B319971341003CFECA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D39B8B419971341003CFECA /* Build configuration list for PBXNativeTarget "Llamas in Pajamas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D39B8B519971341003CFECA /* Debug */,
+				1D39B8B619971341003CFECA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1D39B8B719971341003CFECA /* Build configuration list for PBXNativeTarget "Llamas in PajamasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D39B8B819971341003CFECA /* Debug */,
+				1D39B8B919971341003CFECA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D39B88C19971341003CFECA /* Project object */;
+}
