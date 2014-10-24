@@ -26,9 +26,9 @@ class Llama : GameCharacter {
         
         super.init(texture: self.idleAnimationTextures[0], color: UIColor.whiteColor(), size: CGSizeMake(1.0, 1.0))
         
-        self.physicsBody!.categoryBitMask = CharacterType.Llama.toRaw()
-        self.physicsBody!.contactTestBitMask = CharacterType.Pajama.toRaw() | CharacterType.Lion.toRaw()
-        self.physicsBody!.collisionBitMask = CharacterType.Edge.toRaw()
+        self.physicsBody!.categoryBitMask = CharacterType.Llama.rawValue
+        self.physicsBody!.contactTestBitMask = CharacterType.Pajama.rawValue | CharacterType.Lion.rawValue
+        self.physicsBody!.collisionBitMask = CharacterType.Edge.rawValue
         self.physicsBody!.linearDamping = 1.5
         self.physicsBody!.restitution = 0.1
         self.animateIdle()

@@ -16,9 +16,9 @@ class Lion : GameCharacter {
         super.init(texture: animationTextures[0], color: UIColor.whiteColor(), size: CGSizeMake(1.0, 1.0))
         self.runningSpeedInSeconds = runningSpeedInSeconds
         self.zPosition = 2
-        self.physicsBody!.categoryBitMask = CharacterType.Lion.toRaw()
+        self.physicsBody!.categoryBitMask = CharacterType.Lion.rawValue
         self.physicsBody!.contactTestBitMask = 0
-        self.physicsBody!.collisionBitMask = CharacterType.Edge.toRaw() | CharacterType.Llama.toRaw() | CharacterType.Pajama.toRaw()
+        self.physicsBody!.collisionBitMask = CharacterType.Edge.rawValue | CharacterType.Llama.rawValue | CharacterType.Pajama.rawValue
         self.physicsBody!.restitution = 0.6
         
         self.animate()
@@ -26,9 +26,9 @@ class Lion : GameCharacter {
     
     func animate() {
         let animateAction = SKAction.animateWithTextures(animationTextures, timePerFrame: 0.2, resize: true, restore: false)
-        let moveRightAction = SKAction.moveBy(CGVector(190.0,0), duration: runningSpeedInSeconds)
+        let moveRightAction = SKAction.moveBy(CGVector(dx: 190.0,dy: 0), duration: runningSpeedInSeconds)
         moveRightAction.timingMode = SKActionTimingMode.EaseInEaseOut
-        let moveLeftAction = SKAction.moveBy(CGVector(-190.0,0), duration: runningSpeedInSeconds*2)
+        let moveLeftAction = SKAction.moveBy(CGVector(dx: -190.0,dy: 0), duration: runningSpeedInSeconds*2)
         moveLeftAction.timingMode = SKActionTimingMode.EaseInEaseOut
         let moveSequence = SKAction.sequence([moveRightAction, moveLeftAction])
         let group = SKAction.group([animateAction,moveSequence])

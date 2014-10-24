@@ -52,7 +52,7 @@ class Pajama : GameCharacter {
         
         super.init(texture: animationTextures[0], color: UIColor.whiteColor(), size: CGSizeMake(1.0, 1.0))
         
-        self.physicsBody!.categoryBitMask = CharacterType.Pajama.toRaw()
+        self.physicsBody!.categoryBitMask = CharacterType.Pajama.rawValue
         self.physicsBody!.contactTestBitMask = 0
         self.physicsBody!.collisionBitMask = 0
         self.color = UIColor.whiteColor()
