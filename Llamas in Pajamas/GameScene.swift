@@ -41,8 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     //MARK:- Track Touches
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
             
             // Move llama to position of touch
@@ -60,12 +59,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             llama.animateWalk(1)
         }
+
     }
     
     //MARK:- SKPhysicsContactDelegate Methods
     
-    func didBeginContact(contact: SKPhysicsContact!) {
-        
+    func didBeginContact(contact: SKPhysicsContact) {
         var otherNode = SKNode()
         
         if contact.bodyA.node == llama {
@@ -76,7 +75,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if otherNode.isKindOfClass(GameCharacter) {
-            self.handleLlamaCollisions(otherNode as GameCharacter)
+            self.handleLlamaCollisions(otherNode as! GameCharacter)
         }
     }
     
@@ -135,9 +134,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func handleLlamaCollisions(character: GameCharacter) {
         
         if character.isKindOfClass(Lion) {
-            lionContacted(character as Lion)
+            lionContacted(character as! Lion)
         } else if character.isKindOfClass(Pajama) {
-            pajamaContacted(character as Pajama)
+            pajamaContacted(character as! Pajama)
         }
     }
     

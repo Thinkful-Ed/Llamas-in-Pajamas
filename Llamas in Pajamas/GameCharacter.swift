@@ -35,7 +35,7 @@ class GameCharacter: SKSpriteNode {
     class func framesFromAtlas(named atlasName: String) -> [SKTexture] {
         let atlas = SKTextureAtlas(named: atlasName)
         
-        var textureNames = atlas.textureNames as [String]
+        var textureNames = atlas.textureNames as! [String]
         
         sort(&textureNames, { $0 < $1 } )
         
