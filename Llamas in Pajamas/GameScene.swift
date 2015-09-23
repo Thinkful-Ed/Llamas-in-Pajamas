@@ -41,7 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     //MARK:- Track Touches
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch: AnyObject in touches {
             
             // Move llama to position of touch
@@ -144,7 +144,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         llama.health -= 10
         
-        println("Llama health is now \(llama.health)")
+        print("Llama health is now \(llama.health)")
         
         if llama.health < 50 {
             llama.pulse()
@@ -185,7 +185,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // update count of pajamas remaining
         pajamaCount--
         
-        println("Llama now has \(llama.points) points and \(pajamaCount) pajamas remaining")
+        print("Llama now has \(llama.points) points and \(pajamaCount) pajamas remaining")
         
         if pajamaCount == 0 {
             userWonTheGame = true
@@ -197,11 +197,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let currentTime = NSDate()
         let gameTime = currentTime.timeIntervalSinceDate(startTime)
-        println("Game completed in \(gameTime) seconds")
+        print("Game completed in \(gameTime) seconds")
         if userWonTheGame == true {
-            println("You Won!")
+            print("You Won!")
         } else {
-            println("You Lost!")
+            print("You Lost!")
         }
         
         // set delegate to nil so that gameplay is essentially over
@@ -237,7 +237,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         llama.points = 0
         addLlama()
         
-        println("New Game!")
+        print("New Game!")
     }
     
 }

@@ -47,8 +47,8 @@ class Llama : GameCharacter {
     }
     
     func pulse() {
-        if let pulseAction = self.actionForKey("pulse") {
-            println("Already pulsing!")
+        if let _ = self.actionForKey("pulse") {
+            print("Already pulsing!")
         } else {
             let pulseRed = SKAction.sequence([
                 SKAction.colorizeWithColor(UIColor.redColor(), colorBlendFactor: 1.0, duration: 0.55),

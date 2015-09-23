@@ -16,7 +16,7 @@ enum CharacterType: UInt32 {
 
 class GameCharacter: SKSpriteNode {
     
-    override init(texture: SKTexture!, color: UIColor!, size: CGSize) {
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         
         super.init(texture: texture, color: color, size: size)
         
@@ -35,9 +35,9 @@ class GameCharacter: SKSpriteNode {
     class func framesFromAtlas(named atlasName: String) -> [SKTexture] {
         let atlas = SKTextureAtlas(named: atlasName)
         
-        var textureNames = atlas.textureNames as! [String]
+        var textureNames = atlas.textureNames 
         
-        sort(&textureNames, { $0 < $1 } )
+        textureNames.sortInPlace({ $0 < $1 } )
         
         let textures = textureNames.map {
             textureName -> SKTexture in
