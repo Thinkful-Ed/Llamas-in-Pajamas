@@ -8,10 +8,10 @@
 import SpriteKit
 
 enum CharacterType: UInt32 {
-    case Llama
-    case Pajama
-    case Lion
-    case Edge
+    case llama
+    case pajama
+    case lion
+    case edge
 }
 
 class GameCharacter: SKSpriteNode {
@@ -23,7 +23,7 @@ class GameCharacter: SKSpriteNode {
         self.xScale = 0.4 // 0.5 for retina only images... slighlty smaller to make gameplay better
         self.yScale = 0.4
         self.physicsBody = SKPhysicsBody(circleOfRadius: 25) // why 25?
-        self.physicsBody!.dynamic = true
+        self.physicsBody!.isDynamic = true
         self.physicsBody!.affectedByGravity = false
         self.physicsBody!.restitution = 1.0
         self.physicsBody!.friction = 0
@@ -37,7 +37,7 @@ class GameCharacter: SKSpriteNode {
         
         var textureNames = atlas.textureNames 
         
-        textureNames.sortInPlace({ $0 < $1 } )
+        textureNames.sort(isOrderedBefore: { $0 < $1 } )
         
         let textures = textureNames.map {
             textureName -> SKTexture in

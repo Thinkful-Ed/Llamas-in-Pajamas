@@ -27,43 +27,43 @@ class Pajama : GameCharacter {
         didSet {
             switch pajamaColor {
             case .none:
-                self.color = UIColor.whiteColor()
+                self.color = UIColor.white()
             case .red:
-                self.color = UIColor.redColor()
+                self.color = UIColor.red()
             case .green:
-                self.color = UIColor.greenColor()
+                self.color = UIColor.green()
             case .blue:
-                self.color = UIColor.blueColor()
+                self.color = UIColor.blue()
             case .purple:
-                self.color = UIColor.purpleColor()
+                self.color = UIColor.purple()
             case .orange:
-                self.color = UIColor.orangeColor()
+                self.color = UIColor.orange()
             case .yellow:
-                self.color = UIColor.yellowColor()
+                self.color = UIColor.yellow()
             case .black:
-                self.color = UIColor.blackColor()
+                self.color = UIColor.black()
             case .brown:
-                self.color = UIColor.brownColor()
+                self.color = UIColor.brown()
             }
         }
     }
     
     init() {
         
-        super.init(texture: animationTextures[0], color: UIColor.whiteColor(), size: CGSizeMake(1.0, 1.0))
+        super.init(texture: animationTextures[0], color: UIColor.white(), size: CGSize(width: 1.0, height: 1.0))
         
-        self.physicsBody!.categoryBitMask = CharacterType.Pajama.rawValue
+        self.physicsBody!.categoryBitMask = CharacterType.pajama.rawValue
         self.physicsBody!.contactTestBitMask = 0
         self.physicsBody!.collisionBitMask = 0
-        self.color = UIColor.whiteColor()
+        self.color = UIColor.white()
         self.colorBlendFactor = 1.0
         self.animate()
     }
     
     func animate() {
-        let animationAction = SKAction.animateWithTextures(animationTextures, timePerFrame: 0.3, resize: true, restore: false)
-        let repeatAction = SKAction.repeatActionForever(animationAction)
-        self.runAction(repeatAction)
+        let animationAction = SKAction.animate(with: animationTextures, timePerFrame: 0.3, resize: true, restore: false)
+        let repeatAction = SKAction.repeatForever(animationAction)
+        self.run(repeatAction)
     }
     
     // apparently we need this as of xcode 6 beta 5
