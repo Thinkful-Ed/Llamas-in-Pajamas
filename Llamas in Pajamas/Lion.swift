@@ -13,7 +13,7 @@ class Lion : GameCharacter {
     var runningSpeedInSeconds = 0.0
     
     init(runningSpeedInSeconds: Double) {
-        super.init(texture: animationTextures[0], color: UIColor.white(), size: CGSize(width: 1.0, height: 1.0))
+        super.init(texture: animationTextures[0], color: UIColor.white, size: CGSize(width: 1.0, height: 1.0))
         self.runningSpeedInSeconds = runningSpeedInSeconds
         self.zPosition = 2
         self.physicsBody!.categoryBitMask = CharacterType.lion.rawValue

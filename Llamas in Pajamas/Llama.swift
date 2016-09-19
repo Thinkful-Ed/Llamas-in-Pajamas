@@ -24,7 +24,7 @@ class Llama : GameCharacter {
     
     init() {
         
-        super.init(texture: self.idleAnimationTextures[0], color: UIColor.white(), size: CGSize(width: 1.0, height: 1.0))
+        super.init(texture: self.idleAnimationTextures[0], color: UIColor.white, size: CGSize(width: 1.0, height: 1.0))
         
         self.physicsBody!.categoryBitMask = CharacterType.llama.rawValue
         self.physicsBody!.contactTestBitMask = CharacterType.pajama.rawValue | CharacterType.lion.rawValue
@@ -51,7 +51,7 @@ class Llama : GameCharacter {
             print("Already pulsing!")
         } else {
             let pulseRed = SKAction.sequence([
-                SKAction.colorize(with: UIColor.red(), colorBlendFactor: 1.0, duration: 0.55),
+                SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 0.55),
                 SKAction.wait(forDuration: 0.1),
                 SKAction.colorize(withColorBlendFactor: 0.0, duration: 0.55)])
             let repeatAction = SKAction.repeatForever(pulseRed)

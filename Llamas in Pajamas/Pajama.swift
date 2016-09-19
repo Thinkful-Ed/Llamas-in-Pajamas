@@ -27,35 +27,35 @@ class Pajama : GameCharacter {
         didSet {
             switch pajamaColor {
             case .none:
-                self.color = UIColor.white()
+                self.color = UIColor.white
             case .red:
-                self.color = UIColor.red()
+                self.color = UIColor.red
             case .green:
-                self.color = UIColor.green()
+                self.color = UIColor.green
             case .blue:
-                self.color = UIColor.blue()
+                self.color = UIColor.blue
             case .purple:
-                self.color = UIColor.purple()
+                self.color = UIColor.purple
             case .orange:
-                self.color = UIColor.orange()
+                self.color = UIColor.orange
             case .yellow:
-                self.color = UIColor.yellow()
+                self.color = UIColor.yellow
             case .black:
-                self.color = UIColor.black()
+                self.color = UIColor.black
             case .brown:
-                self.color = UIColor.brown()
+                self.color = UIColor.brown
             }
         }
     }
     
     init() {
         
-        super.init(texture: animationTextures[0], color: UIColor.white(), size: CGSize(width: 1.0, height: 1.0))
+        super.init(texture: animationTextures[0], color: UIColor.white, size: CGSize(width: 1.0, height: 1.0))
         
         self.physicsBody!.categoryBitMask = CharacterType.pajama.rawValue
         self.physicsBody!.contactTestBitMask = 0
         self.physicsBody!.collisionBitMask = 0
-        self.color = UIColor.white()
+        self.color = UIColor.white
         self.colorBlendFactor = 1.0
         self.animate()
     }

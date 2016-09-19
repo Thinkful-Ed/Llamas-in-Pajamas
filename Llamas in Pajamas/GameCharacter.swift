@@ -37,7 +37,7 @@ class GameCharacter: SKSpriteNode {
         
         var textureNames = atlas.textureNames 
         
-        textureNames.sort(isOrderedBefore: { $0 < $1 } )
+        textureNames.sort(by: { $0 < $1 } )
         
         let textures = textureNames.map {
             textureName -> SKTexture in
