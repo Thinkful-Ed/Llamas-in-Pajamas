@@ -24,43 +24,43 @@ class Llama : GameCharacter {
     
     init() {
         
-        super.init(texture: self.idleAnimationTextures[0], color: UIColor.whiteColor(), size: CGSizeMake(1.0, 1.0))
+        super.init(texture: self.idleAnimationTextures[0], color: UIColor.white, size: CGSize(width: 1.0, height: 1.0))
         
-        self.physicsBody!.categoryBitMask = CharacterType.Llama.rawValue
-        self.physicsBody!.contactTestBitMask = CharacterType.Pajama.rawValue | CharacterType.Lion.rawValue
-        self.physicsBody!.collisionBitMask = CharacterType.Edge.rawValue
+        self.physicsBody!.categoryBitMask = CharacterType.llama.rawValue
+        self.physicsBody!.contactTestBitMask = CharacterType.pajama.rawValue | CharacterType.lion.rawValue
+        self.physicsBody!.collisionBitMask = CharacterType.edge.rawValue
         self.physicsBody!.linearDamping = 1.5
         self.physicsBody!.restitution = 0.1
         self.animateIdle()
     }
     
     func animateIdle() {
-        let animationAction = SKAction.animateWithTextures(self.idleAnimationTextures, timePerFrame: 0.05, resize: true, restore: false)
-        let repeatAction = SKAction.repeatActionForever(animationAction)
-        self.runAction(repeatAction)
+        let animationAction = SKAction.animate(with: self.idleAnimationTextures, timePerFrame: 0.05, resize: true, restore: false)
+        let repeatAction = SKAction.repeatForever(animationAction)
+        self.run(repeatAction)
     }
     
-    func animateWalk(duration: Int) {
-        let animationAction = SKAction.animateWithTextures(self.walkAnimationTextures, timePerFrame: 0.05, resize: true, restore: false)
-        let repeatAction = SKAction.repeatAction(animationAction, count: duration)
-        self.runAction(repeatAction, completion: animateIdle)
+    func animateWalk(_ duration: Int) {
+        let animationAction = SKAction.animate(with: self.walkAnimationTextures, timePerFrame: 0.05, resize: true, restore: false)
+        let repeatAction = SKAction.repeat(animationAction, count: duration)
+        self.run(repeatAction, completion: animateIdle)
     }
     
     func pulse() {
-        if let _ = self.actionForKey("pulse") {
+        if let _ = self.action(forKey: "pulse") {
             print("Already pulsing!")
         } else {
             let pulseRed = SKAction.sequence([
-                SKAction.colorizeWithColor(UIColor.redColor(), colorBlendFactor: 1.0, duration: 0.55),
-                SKAction.waitForDuration(0.1),
-                SKAction.colorizeWithColorBlendFactor(0.0, duration: 0.55)])
-            let repeatAction = SKAction.repeatActionForever(pulseRed)
-            self.runAction(repeatAction, withKey:"pulse")
+                SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 0.55),
+                SKAction.wait(forDuration: 0.1),
+                SKAction.colorize(withColorBlendFactor: 0.0, duration: 0.55)])
+            let repeatAction = SKAction.repeatForever(pulseRed)
+            self.run(repeatAction, withKey:"pulse")
         }
     }
     
     func removePulse() {
-        self.removeActionForKey("pulse")
+        self.removeAction(forKey: "pulse")
         self.colorBlendFactor = 0
     }
     

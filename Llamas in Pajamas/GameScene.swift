@@ -13,20 +13,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var llama = Llama()
     var pajamaCount = 0
     var userWonTheGame = false
-    var startTime = NSDate()
+    var startTime = Date()
     
     //MARK:- SKScene Methods
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
-        playRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - 120)
-        physicsBody = SKPhysicsBody(edgeLoopFromRect: playRect)
+        playRect = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height - 120)
+        physicsBody = SKPhysicsBody(edgeLoopFrom: playRect)
         userWonTheGame = false
-        startTime = NSDate()
+        startTime = Date()
         
         // add background
         let background = SKSpriteNode(texture: SKTexture(imageNamed: "background"))
-        background.anchorPoint = CGPointZero
+        background.anchorPoint = CGPoint.zero
         addChild(background)
         
         addCharacters()
@@ -36,26 +36,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
     }
     
     //MARK:- Track Touches
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch: AnyObject in touches {
             
             // Move llama to position of touch
             
-            var locationInScene = touch.locationInNode(self)
+            var locationInScene = touch.location(in: self)
             
             //don't let the llama walk into the sky because that's silly
             if locationInScene.y > playRect.size.height {
                 locationInScene.y = playRect.size.height
             }
             
-            let moveAction = SKAction.moveTo(locationInScene, duration: 0.8)
-            moveAction.timingMode = SKActionTimingMode.EaseInEaseOut
-            llama.runAction(moveAction)
+            let moveAction = SKAction.move(to: locationInScene, duration: 0.8)
+            moveAction.timingMode = SKActionTimingMode.easeInEaseOut
+            llama.run(moveAction)
             
             llama.animateWalk(1)
         }
@@ -64,7 +64,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK:- SKPhysicsContactDelegate Methods
     
-    func didBeginContact(contact: SKPhysicsContact) {
+    func didBegin(_ contact: SKPhysicsContact) {
         var otherNode = SKNode()
         
         if contact.bodyA.node == llama {
@@ -74,7 +74,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             otherNode = contact.bodyA.node!
         }
         
-        if otherNode.isKindOfClass(GameCharacter) {
+        if otherNode is GameCharacter {
             self.handleLlamaCollisions(otherNode as! GameCharacter)
         }
     }
@@ -106,41 +106,41 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Add lions
         let lion1 = Lion(runningSpeedInSeconds: 1.2)
-        lion1.position = CGPointMake(60, 100)
+        lion1.position = CGPoint(x: 60, y: 100)
         addChild(lion1)
         
         let lion2 = Lion(runningSpeedInSeconds: 0.9)
-        lion2.position = CGPointMake(60, 200)
+        lion2.position = CGPoint(x: 60, y: 200)
         addChild(lion2)
         
         let lion3 = Lion(runningSpeedInSeconds: 0.6)
-        lion3.position = CGPointMake(60, 300)
+        lion3.position = CGPoint(x: 60, y: 300)
         addChild(lion3)
     }
     
-    func addPajama(pajama: Pajama) {
+    func addPajama(_ pajama: Pajama) {
         let randomX = CGFloat(arc4random() % UInt32(playRect.width))
         let randomY = CGFloat(arc4random() % UInt32(playRect.height))
-        pajama.position = CGPointMake(randomX, randomY)
+        pajama.position = CGPoint(x: randomX, y: randomY)
         addChild(pajama)
-        pajamaCount++
+        pajamaCount += 1
     }
     
     func addLlama() {
-        llama.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)+110)
+        llama.position = CGPoint(x:self.frame.midX, y:self.frame.midY+110)
         addChild(llama)
     }
     
-    func handleLlamaCollisions(character: GameCharacter) {
+    func handleLlamaCollisions(_ character: GameCharacter) {
         
-        if character.isKindOfClass(Lion) {
+        if character is Lion {
             lionContacted(character as! Lion)
-        } else if character.isKindOfClass(Pajama) {
+        } else if character is Pajama {
             pajamaContacted(character as! Pajama)
         }
     }
     
-    func lionContacted(lion: Lion) {
+    func lionContacted(_ lion: Lion) {
         
         llama.health -= 10
         
@@ -155,7 +155,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func pajamaContacted(pajama: Pajama) {
+    func pajamaContacted(_ pajama: Pajama) {
         
         // update the score based on pajama color
         switch pajama.pajamaColor {
@@ -183,7 +183,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         pajama.removeFromParent()
         
         // update count of pajamas remaining
-        pajamaCount--
+        pajamaCount -= 1
         
         print("Llama now has \(llama.points) points and \(pajamaCount) pajamas remaining")
         
@@ -195,8 +195,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func showGameOverMessage() {
         
-        let currentTime = NSDate()
-        let gameTime = currentTime.timeIntervalSinceDate(startTime)
+        let currentTime = Date()
+        let gameTime = currentTime.timeIntervalSince(startTime)
         print("Game completed in \(gameTime) seconds")
         if userWonTheGame == true {
             print("You Won!")
@@ -209,17 +209,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let gameOverAlert = UIAlertController(title: userWonTheGame ? "You Won!" : "You Lost!",
             message: userWonTheGame ? "Great job!" : "Sorry!",
-            preferredStyle: UIAlertControllerStyle.Alert)
+            preferredStyle: UIAlertControllerStyle.alert)
         
         gameOverAlert.addAction(UIAlertAction(title: "Restart",
-            style: UIAlertActionStyle.Default, handler: restartGame))
+            style: UIAlertActionStyle.default, handler: restartGame))
         
-        self.view?.window?.rootViewController?.presentViewController(gameOverAlert, animated: true, completion: nil)
+        self.view?.window?.rootViewController?.present(gameOverAlert, animated: true, completion: nil)
     }
     
-    func restartGame(sender: UIAlertAction?) {
+    func restartGame(_ sender: UIAlertAction?) {
         for child: AnyObject in self.children {
-            if child.isKindOfClass(GameCharacter) {
+            if child is GameCharacter {
                 child.removeFromParent()
             }
         }
@@ -229,7 +229,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         pajamaCount = 0
         userWonTheGame = false
-        startTime = NSDate()
+        startTime = Date()
         
         addCharacters()
         
